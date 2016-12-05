@@ -11,5 +11,6 @@ main = hspec $ do
             winnerOf (Hand Player1 Rock) (Hand Player2 Rock) `shouldBe` Draaw
             winnerOf (Hand Player1 Rock) (Hand Player2 Paper) `shouldBe` Winner(Player1)
             winnerOf (Hand Player1 Paper) (Hand Player2 Rock) `shouldBe` Winner(Player2)
-            -- should not work
-            winnerOf (Hand Player1 Paper) (Hand Player1 Rock) `shouldBe` Winner(Player1)
+
+        it "should not compile" $ do
+            winnerOf (Hand Player2 Paper) (Hand Player2 Rock) `shouldBe` Winner(Player1)
