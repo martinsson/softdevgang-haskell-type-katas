@@ -20,4 +20,6 @@ data Hand = Hand {p :: Player, s :: Sign} deriving (Show, Eq)
 data Winner = Draaw | Winner Player deriving (Show, Eq)
 
 winnerOf :: Hand -> Hand -> Winner
+winnerOf (Hand p1 Rock) (Hand p2 Paper) = Winner(p1)
+winnerOf (Hand p1 Paper) (Hand p2 Rock) = Winner(p2)
 winnerOf _ _ = Draaw
